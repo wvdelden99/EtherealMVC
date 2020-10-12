@@ -30,7 +30,7 @@ body, button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(75, 75, 75); 
+    background: rgba(75, 75, 75);
 }
 
 /*-----Navbar-----*/
@@ -41,17 +41,18 @@ body, button {
 
     position: fixed;
     display: flex;
-    justify-content: space-around;
     width: 100vw;
     min-height: 12vh;
     align-items: center;
     transition: 250ms ease-in;
+    z-index: 10;
 }
 
 .nav-scroll {
     --nav_txt: #151515;
     --nav_txt-hover: #055fa1;
     --nav_img: invert(85%);
+
     min-height: 8vh;
     background-color: #f0f0f0;
     -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
@@ -81,7 +82,6 @@ body, button {
 
 .nav-list_items {
     display: flex;
-    justify-content: space-around;
 }
 
 .nav-list_items li {
@@ -90,8 +90,8 @@ body, button {
 
 .nav-list_items a {
     font-size: 0.85em;
-    color: var(--nav_txt);
     text-decoration: none;
+    color: var(--nav_txt);
     transition: 0.2s;
 }
 
@@ -101,7 +101,6 @@ body, button {
 
 .nav-list_icons {
     display: flex;
-    justify-content: space-around;
     filter: var(--nav_img);
 }
 
@@ -119,7 +118,6 @@ body, button {
 
 .nav-menu {
     display: none;
-    justify-content: flex-start;
     padding-left: 5vw;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -304,3 +302,114 @@ body, button {
 @media only screen and (min-width: 768px) and (max-width: 991px){ }
 
 @media only screen and (min-width: 992px){}
+
+/*-----Footer-----*/
+.footer {
+    display: flex;
+    justify-content: space-around;
+    height: 45vh;
+    background-color: #ebebeb;
+    padding-top:12.5vh ;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left a {
+    color: #000000;
+    text-decoration: none;
+    padding: 1vh 0;
+}
+
+.footer-left h1 {
+    padding-bottom: 2vh;
+    font-size: 1em;
+}
+
+.footer-left a:hover {
+    opacity: 0.8;
+}
+
+.footer-center h1 {
+    padding-bottom: 2vh;
+    font-size: 1em;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-center a{
+    color: #000000;
+    text-decoration: none;
+    padding: 1vh 0;
+}
+
+.footer-center a:hover {
+    opacity: 0.8;
+}
+
+.footer-right h1 {
+    padding-bottom: 2vh;
+    font-size: 1em;
+}
+
+.footer-right input {
+    border: none;
+    background-color: #d7d7d7;
+    color: #747474;
+    padding: 1vh 1.5vw;
+}
+
+.footer-right button {
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1vh 1vw;
+}
+
+.footer-right button:hover {
+    opacity: 0.8;
+}
+
+.footer-right h2 {
+    padding: 2vh 0;
+}
+
+.footer-right img {
+    width:1.25vw;
+    margin-right: 1vw;
+}
+
+.footer-btm {
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    background-color:#b7b7b7;
+    align-items: center;
+}
+
+.footer-btm p {
+    padding-right: 2vw;
+}
+
+.footer-btm a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-btm a:hover {
+    opacity: 0.8;
+}
+
+ .fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
