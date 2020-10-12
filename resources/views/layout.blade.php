@@ -20,7 +20,7 @@
             </div>
 
             <div class="nav-logo">
-                <a href="#"><img src="{{asset('img/ethereal-logo.png')}}"></a>
+                <a href="{{ url('/')}}"><img src="{{asset('img/ethereal-logo.png')}}"></a>
             </div>
 
             <div class="nav-list">

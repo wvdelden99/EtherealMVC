@@ -1,12 +1,14 @@
 @extends ('layout')
 @section ('content')
     <div class="plg-cont-top">
-        <img class="plg-cont-top_img" src="img/reflection.jpg">
-
-        <div class="plg-cont-top-right">
-            <div class="plg-cont-top_title-box">
+        <img class="plg-cont-top_img-effect" src="{{asset('img/reflection-effect-bg.png')}}">
+        <div class="plg-cont-top_img">
+            <img src="{{asset('img/reflection-plugin-render2.png')}}">
+        </div>
+        <div class="plg-cont-top_title-box">
+            <div class="plg-cont-top_row">
                 <div class="plg-cont-top_title">
-                    <img src="img/reflection-icon.png">
+                    <img src="{{asset('img/reflection-icon.png')}}">
                     <h1>reflection</h1>
                 </div>
                 <div class="plg-cont-top_btn">
@@ -14,11 +16,10 @@
                     <a href="#mid3"><button class="plg-cont-top-tn_btn">Try Now</button></a>
                 </div>
             </div>
-
-            <div class="plg-cont-top_arwdwn">
-                <a href="#mid1"><img src="img/arrow-down-icon.png"></a>
-            </div>
         </div>
+        <div class="plg-cont-top_arwdwn">
+            <a href="#mid1"><img src="{{asset('img/arrow-down-icon.png')}}"></a>
+        </div> 
     </div>
 
     <div class="plg-cont-mid">
@@ -30,58 +31,79 @@
                 compressed</p>
             </div>
             <div class="plg-cont-mid1_img">
-                <img src="img/reflection-plugin.png">
+                <img src="{{asset('img/reflection-plugin.png')}}">
             </div>
         </div>
-
+        
         <div class="plg-cont-mid2 fade-in">
             <div class="plg-cont-mid2_colm">
-                <img src="img/reflection-different-views.png">
-                <h1>Switch easy between views</h1>
-                <p>Switch easy between the spectrum view or
-                the compression view to what you are
-                compressing in a instant</p>
+                <img src="{{asset('img/reflection-different-views.png')}}">
+                <div class="plg-cont-mid2_txt">
+                    <h1>Switch easy between views</h1>
+                    <p>Switch easy between the spectrum view or
+                    the compression view to what you are
+                    compressing in a instant</p>
+                </div>
             </div>
             <div class="plg-cont-mid2_colm">
-                <img src="img/reflection-simple-interface.png">
-                <h1>Simple to use interface</h1>
-                <p>An easy to use interface with 
-                a modern design</p>
+                <img src="{{asset('img/reflection-simple-interface.png')}}">
+                <div class="plg-cont-mid2_txt">
+                    <h1>Simple to use interface</h1>
+                    <p>An easy to use interface with 
+                    a modern design</p>
+                </div>
             </div>
             <div class="plg-cont-mid2_colm">
-                <img src="img/reflection-change-visuals.png">
+                <img src="{{asset('img/reflection-change-visuals.png')}}">
+                <div class="plg-cont-mid2_txt">
                     <h1>Change with visuals</h1>
                     <p>Use the visualizers to chnage the 
                     values for an easier and better workflow</p>
+                </div>
             </div>
         </div>
 
         <div class="plg-cont-mid3 fade-in" id="mid3">
-            <div class="plg-cont-mid3_txt">
-                <h1>Buy seperate or safe with a bundle</h1>
-                <p>Reflection can be bought seperate or in bundle with other plugins</p>
-                <button>See Other Products</button>
+            <div class="plg-cont-mid3_txt-box">
+                <div class="plg-cont-mid3_txt">
+                    <h1>Buy seperate or safe with a bundle</h1>
+                    <p>Reflection can be bought seperate or in bundle with other plugins</p>
+                </div>
+                <a href="{{route('plugins')}}"><button>See Other Products</button></a>
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
-                    <img src="img/creation-bundle-icon.png">
-                    <h1 class="plg-cont-mid3_title">reflection</h1>
-                    <h1 class="plg-cont-mid3-price">$75</h1>
-                    <button>Add to Cart</button>
+                    <div class="plg-cont-mid3-top">
+                        <img src="{{asset('img/reflection-icon-000.png')}}">
+                        <h1 class="plg-cont-mid3_title">reflection</h1>
+                    </div>
+                    <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
+                    <div class="plg-cont-mid3_btn pcmb">
+                        <button class="plg-cont-mid3_btn-tff">Try for Free*</button>
+                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="plg-cont-mid3-box">
-                    <img src="img/creation-bundle-icon.png">
-                    <h1 class="plg-cont-mid3_title">effects bundle</h1>
+                    <div class="plg-cont-mid3-top">
+                        <img src="{{asset('img/effects-bundle-icon.png')}}">
+                        <h1 class="plg-cont-mid3_title">effects bundle</h1>
+                    </div>
                     <a href="">View More</a>
-                    <h1 class="plg-cont-mid3-price">$250</h1>
-                    <button>Add to Cart</button>
+                    <h1 class="plg-cont-mid3-price"><span>$</span>250</h1>
+                    <div class="plg-cont-mid3_btn">
+                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="plg-cont-mid3-box">
-                    <img src="img/creation-bundle-icon.png">
-                    <h1 class="plg-cont-mid3_title">creation bundle</h1>
+                    <div class="plg-cont-mid3-top">
+                        <img src="{{asset('img/creation-bundle-icon.png')}}">
+                        <h1 class="plg-cont-mid3_title">creation bundle</h1>
+                    </div>
                     <a href="">View More</a>
-                    <h1 class="plg-cont-mid3-price">$500</h1>
-                    <button>Add to Cart</button>
+                    <h1 class="plg-cont-mid3-price"><span>$</span>500</h1>
+                    <div class="plg-cont-mid3_btn">
+                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,4 +119,5 @@
         <h2>Supported Hosts:</h2>
         <p>Ableton Live 10, FL Studio 20, Komplete Kontrol, MASCHINE 2, REAPER 5</p>
     </div>
+    
 @endsection
