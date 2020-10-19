@@ -11,6 +11,7 @@
         <!-- Styles -->
         <link href="{{asset('css/layout.css')}}" rel="stylesheet">
         <link href="{{asset('css/content.css')}}" rel="stylesheet">
+        @yield ('sign-css')
     </head>
 
     <body>
@@ -32,16 +33,35 @@
                 </div>
                 <div class="nav-list_icons">
                     <li><a href="#"><img src="{{asset('img/cart-icon.png')}}"></a></li>
-                    <li><a href="#"><img src="{{asset('img/account-icon.png')}}"></a></li>
+                    @guest
+                    <li><a href="{{route('login')}}"><img src="{{asset('img/account-icon.png')}}"></a></li>
+                    @else
+                    <li class="dropdown"><a href="{{route('login')}}"><img src="{{asset('img/account-icon.png')}}"></a>
+                        <div class="nav-dropdown-cont">
+                                <a href="{{ route('login')}}">Account</a>
+                            <div>
+                                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    @endguest
                 </div>
             </div>
         </div>
 
+        <div class="wrapper">
         @yield ('plugins')
 
         @yield ('content')
 
         @yield ('plugin-reflection')
+        </div>
 
         <div class="footer">
             <div class="footer-left">

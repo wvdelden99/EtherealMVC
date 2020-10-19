@@ -1,4 +1,5 @@
 @extends ('layout')
+
 @section ('content')
     <div class="plg-cont-top">
         <img class="plg-cont-top_img-effect" src="{{asset('img/reflection-effect-bg.png')}}">

@@ -12,7 +12,7 @@ body {
     background-color: #151515;
 }
 
-body, button {
+body, button, select {
     font-family: Comfortaa;
 }
 
@@ -412,4 +412,35 @@ body, button {
 
 .fade-in.appear {
     opacity: 1;
+}
+
+/*-----Wrapper-----*/
+.wrapper {
+    min-height: 50vh;
+}
+
+/*-----User-----*/
+.nav-dropdown-cont {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.nav-dropdown-cont a {
+    display: block;
+    color: #1e1e1e;
+    padding: 0.75vh 0.75vw;
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: 0.3s;
+}
+  
+.nav-dropdown-cont a:hover {
+    background-color: #757575;
+}
+  
+.dropdown:hover .nav-dropdown-cont {
+    display: block;
 }

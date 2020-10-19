@@ -30,4 +30,20 @@ Route::get('/storm', 'App\Http\Controllers\StormController@show')->name('storm')
 
 Route::get('/packs', 'App\Http\Controllers\PacksController@show')->name('packs');
 Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
+
+Route::get('/community', function () {
+    $presets = App\Models\Presets::take(3)->latest()->get();
+
+    return view('community', [
+        'presets' => $presets
+    ]);
+})->name('community');
+Route::get('community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
+// Route::get('community/{presets}', 'App\Http\Controllers\CommunityController@show');
+
+
 Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('support');
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/account', [App\Http\Controllers\DashboardController::class, 'show'])->name('account');

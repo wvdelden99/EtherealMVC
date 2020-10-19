@@ -482,8 +482,8 @@
 /*-----Plugins-----*/
 .plugin-links {
     display: flex;
-    height: 100vh;
-    padding: 12.5vh;
+    height: 50vh;
+    padding: 20vh 10vw;
     justify-content: center;
 }
 
@@ -493,9 +493,11 @@
     margin: 1vh 1vw;
     width: -webkit-fill-available;
     height: 10vh;
-    background-color: #f0f0f0;
-    color: #000;
+    color: #f0f0f0;
+    border: 1px solid #f0f0f0;
     text-decoration: none;
+    justify-content: center;
+    transition: 0.2s;
 }
 
 .plugin-links a:hover {
@@ -542,4 +544,215 @@
 .cont-mid {
     display: flex;
     height: 50vh;
+}
+
+/*-----Community-----*/
+.cmn-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cmn-cont_title {
+    display: flex;
+    align-items: center;
+}
+
+.cmn-cont_title a {
+    color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 0.75vh 0.75vw;
+    margin-left: auto;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.cmn-cont_title a:hover {
+    color: #757575;
+    border-color: #757575;
+}
+
+.cmn-cont_tables {
+    padding: 1vh 0;
+    width: 1000px;
+}
+
+.cmn-cont_tables img {
+    width: 16px;
+}
+
+.cmn-cont_tables h2{
+    padding: 1vh 0;
+    color: #f0f0f0;
+    font-weight: normal;
+}
+
+.cmn-cont_tables table {
+    border-collapse: collapse;
+    width: 100%;
+    min-height: 50px;
+}
+
+.cmn-cont_tables tr {
+    height: 50px;
+}
+
+.cmn-cont_tables th {
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9em;
+    color: #f0f0f0;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 1vw;
+}
+
+.cmn-tbl-fav {
+    width: 50px;
+    text-align: center;
+}
+
+.cmn-th-fav {
+    border-right: 1px solid #f0f0f0;
+}
+
+.cmn-tbl-pt {
+    width: 350px;
+}
+
+.cmn-th-pt {
+    border-right: 1px solid #f0f0f0;
+}
+
+.cmn-tbl-crt {
+    width: 175px;
+}
+
+.cmn-th-crt {
+    border-right: 1px solid #f0f0f0;
+}
+
+.cmn-tbl-ctg {
+    width: 225px;
+}
+
+.cmn-th-ctg {
+    border-right: 1px solid #f0f0f0;
+}
+
+.cmn-tbl-like {
+    width: 120px;
+    text-align: center;
+}
+
+.cmn-tbl-dwnl {
+    width: 80px;
+    text-align: center;
+}
+
+.cmn-cont_tables td {
+    padding: 1vh 1vw;
+    font-size: 0.9em;
+    border-bottom: 1px solid #f0f0f0;
+    color: #f0f0f0;
+    font-weight: lighter;
+}
+
+.cmn-cont_form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2vh 0;
+}
+
+.cmn-cont_form label {
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+
+.cmn-cont_form select{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #f0f0f0;
+    color: #f0f0f0;
+    padding: 0.5vh 0.75vw;
+    cursor: pointer;
+    margin: 0 0.5vw;
+}
+
+.cmn-cont_form option {
+    background-color: #151515;
+}
+
+.cmn-cont_form input {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    height: 3vh;
+    padding: 1vh 0.75vw;
+    color: #f0f0f0;
+    margin: 0 0.5vw;
+}
+
+.cmn-cont_form button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.icon-grey {
+    filter: brightness(0.25)
+}
+
+/*-----Community Upload-----*/
+.cmnup-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cmnup-cont_form {
+    min-width: 40vw;
+}
+
+.cmnup-cont h1{
+    color: #f0f0f0;
+    font-size: 1.75em;
+    padding: 1vh 0;
+}
+
+.cmnup-cont form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cmnup-cont label {
+    color: #f0f0f0;
+    font-size: 0.9em;
+    padding: 1vh 0;
+}
+
+.cmnup-cont input {
+    margin: 1vh 0;
+    padding: 0.25vh 0.25vw;
+    border-radius: 5px;
+}
+
+.cmnup-cont button {
+    background-color: #757575;
+    color: #f0f0f0;
+    border: 1px solid#757575;
+    padding: 1vh 0;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1vh;
+}
+
+.cmnup-cont button:hover {
+    background-color: #3e3e3e;
+    border-color: #3e3e3e ;
 }
