@@ -28,6 +28,6 @@ class DashboardController extends Controller
 
     public function show()
     {
-        return view('account');
+        return view('auth.account');
     }
 }

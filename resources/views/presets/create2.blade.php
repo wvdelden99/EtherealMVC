@@ -11,26 +11,26 @@
             <form method="POST" action="{{ route('community')}}">
                 @csrf
 
-                <div class="field">
-                    <label class="label" for="preset_title">Preset Title</label>
+                <label for="preset_title">Preset Title</label>
+                    <input class=" @error('preset_title') error-inp @enderror" type="text" name="preset_title" id="preset_title" value="{{old('preset_title')}}">
+                    @error('preset_title')
+                    <p class="error">{{ $errors->first('preset_title')}}</p>
+                    @enderror
+                    
+                <label for="creator">Creator</label>
+                    <input class=" @error('creator') error-inp @enderror" type="text" name="creator" id="creator" value="{{old('creator')}}">
+                    @error('creator')
+                    <p class="error">{{ $errors->first('creator')}}</p>
+                    @enderror
 
-                    <div class="control">
-                        <input class="input" type="text"  name="preset_title" id="preset_title">
-                    </div>
-                </div>
+                <label for="creator">Category</label>
+                    <input class=" @error('category') error-inp @enderror" type="text" name="category" id="category" value="{{old('category')}}">
+                    @error('category')
+                    <p class="error">{{ $errors->first('category')}}</p>
+                    @enderror
 
-                <div class="field">
-                    <label class="label" for="creator">Creator</label>
-
-                    <div class="control">
-                        <input class="input" type="hidden" name="creator" id="creator" value="{{ Auth::user()->name }}"></input>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label" for="category">Category</label>
-
-                    <select name="category" id="category">
+                <!-- <label for="category">Category</label>
+                    <select class=" @error('category') error-inp @enderror" name="category" value="{{old('category')}}">
                         <option disabled selected value> -- Select an Option -- </option>
                         <option disabled>-----Bass-----</option>
                         <option>Bass (Guitar)</option>
@@ -60,12 +60,11 @@
                         <option>Vocoder</option>
                         <option>Vocal Chops</option>
                     </select>
-                </div>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-link" type="submit">Submit</button>
-                    </div>
-                </div>
+                    @error('category')
+                    <p class="error">{{ $errors->first('catergory')}}</p>
+                    @enderror -->
+
+                <button type="submit">Upload</button>
             </form>
         </div>
     </div>

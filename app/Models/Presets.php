@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Presets extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function scopeSearch($query, $s)
+    {
+      return $query->where('preset_title', 'like', '%' .$s. '%')
+          ->orWhere('creator', 'like', '%' .$s. '%');
+    }
 }

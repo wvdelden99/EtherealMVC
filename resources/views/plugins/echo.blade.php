@@ -1,16 +1,20 @@
-@extends ('layout')
+@extends('layout')
 
-@section ('content')
+@section('title')
+    <title>Ethereal - Echo</title>
+@endsection
+
+@section('content')
     <div class="plg-cont-top">
-        <img class="plg-cont-top_img-effect" src="{{asset('img/storm-effect-bg.png')}}">
+        <img class="plg-cont-top_img-effect" src="{{asset('img/echo-effect-bg.png')}}">
         <div class="plg-cont-top_img">
             <img src="{{asset('img/reflection-plugin-render2.png')}}">
         </div>
         <div class="plg-cont-top_title-box">
             <div class="plg-cont-top_row">
                 <div class="plg-cont-top_title">
-                    <img src="{{asset('img/storm-icon.png')}}">
-                    <h1>storm</h1>
+                    <img src="{{asset('img/echo-icon.png')}}">
+                    <h1>echo</h1>
                 </div>
                 <div class="plg-cont-top_btn">
                     <a href="#mid3"><button class="plg-cont-top-bn_btn asc-bn">Buy Now</button></a>
@@ -66,15 +70,15 @@
             <div class="plg-cont-mid3_txt-box">
                 <div class="plg-cont-mid3_txt">
                     <h1>Buy seperate or safe with a bundle</h1>
-                    <p>Storm can be bought seperate or in bundle with other plugins</p>
+                    <p>Echo can be bought seperate or in bundle with other plugins</p>
                 </div>
                 <a href="{{route('plugins')}}"><button>See Other Products</button></a>
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
                     <div class="plg-cont-mid3-top">
-                        <img src="{{asset('img/storm-icon-000.png')}}">
-                        <h1 class="plg-cont-mid3_title">Storm</h1>
+                        <img src="{{asset('img/echo-icon-000.png')}}">
+                        <h1 class="plg-cont-mid3_title">echo</h1>
                     </div>
                     <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
                     <div class="plg-cont-mid3_btn pcmb">

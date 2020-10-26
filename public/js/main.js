@@ -1,13 +1,24 @@
-/*-----Nav Menu-----*/
+/*-----Nav Icon Onclick-----*/
+document.querySelector('.nav-list_icon-item').addEventListener('click', function () {
+  document.querySelector('.dropdown').classList.toggle('dropdown-show')
+});
+/*-----Nav Menu/Sidenav-----*/
 const menuBtn = document.querySelector('.nav-menu');
+const sideNav = document.querySelector('.sidenav');
+const sidenavTransparent = document.querySelector('.sidenav-transparent');
 let menuOpen = false;
+
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     menuOpen = true;
+    sideNav.classList.add("sidenav-open");
+    sidenavTransparent.classList.add("transparent-active");
   } else {
     menuBtn.classList.remove('open');
     menuOpen = false;
+    sideNav.classList.remove("sidenav-open");
+    sidenavTransparent.classList.remove("transparent-active");
   }
 });
 

@@ -1,6 +1,10 @@
-@extends ('layout')
+@extends('layout')
 
-@section ('content')
+@section('title')
+    <title>Ethereal - Reflection</title>
+@endsection
+
+@section('content')
     <div class="plg-cont-top">
         <img class="plg-cont-top_img-effect" src="{{asset('img/reflection-effect-bg.png')}}">
         <div class="plg-cont-top_img">

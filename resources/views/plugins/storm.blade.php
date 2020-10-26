@@ -1,20 +1,24 @@
-@extends ('layout')
+@extends('layout')
 
-@section ('content')
-<div class="plg-cont-top">
-        <img class="plg-cont-top_img-effect" src="{{asset('img/creation-effect-bg.png')}}">
+@section('title')
+    <title>Ethereal - Storm</title>
+@endsection
+
+@section('content')
+    <div class="plg-cont-top">
+        <img class="plg-cont-top_img-effect" src="{{asset('img/storm-effect-bg.png')}}">
         <div class="plg-cont-top_img">
             <img src="{{asset('img/reflection-plugin-render2.png')}}">
         </div>
         <div class="plg-cont-top_title-box">
             <div class="plg-cont-top_row">
                 <div class="plg-cont-top_title">
-                    <img src="{{asset('img/creation-icon.png')}}">
-                    <h1>creation</h1>
+                    <img src="{{asset('img/storm-icon.png')}}">
+                    <h1>storm</h1>
                 </div>
                 <div class="plg-cont-top_btn">
-                    <a href="#mid3"><button class="plg-cont-top-bn_btn">Buy Now</button></a>
-                    <a href="#mid3"><button class="plg-cont-top-tn_btn">Try Now</button></a>
+                    <a href="#mid3"><button class="plg-cont-top-bn_btn asc-bn">Buy Now</button></a>
+                    <a href="#mid3"><button class="plg-cont-top-tn_btn asc-tn">Try Now</button></a>
                 </div>
             </div>
         </div>
@@ -66,17 +70,17 @@
             <div class="plg-cont-mid3_txt-box">
                 <div class="plg-cont-mid3_txt">
                     <h1>Buy seperate or safe with a bundle</h1>
-                    <p>Creation can be bought seperate or in bundle with other plugins</p>
+                    <p>Storm can be bought seperate or in bundle with other plugins</p>
                 </div>
                 <a href="{{route('plugins')}}"><button>See Other Products</button></a>
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
                     <div class="plg-cont-mid3-top">
-                        <img src="{{asset('img/creation-icon-000.png')}}">
-                        <h1 class="plg-cont-mid3_title">creation</h1>
+                        <img src="{{asset('img/storm-icon-000.png')}}">
+                        <h1 class="plg-cont-mid3_title">Storm</h1>
                     </div>
-                    <h1 class="plg-cont-mid3-price pcmp"><span>$</span>150</h1>
+                    <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
                     <div class="plg-cont-mid3_btn pcmb">
                         <button class="plg-cont-mid3_btn-tff">Try for Free*</button>
                         <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
@@ -85,7 +89,7 @@
                 <div class="plg-cont-mid3-box">
                     <div class="plg-cont-mid3-top">
                         <img src="{{asset('img/effects-bundle-icon.png')}}">
-                        <h1 class="plg-cont-mid3_title">synth bundle</h1>
+                        <h1 class="plg-cont-mid3_title">effects bundle</h1>
                     </div>
                     <a href="">View More</a>
                     <h1 class="plg-cont-mid3-price"><span>$</span>250</h1>

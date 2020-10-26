@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section ('sign-css')
+@section ('css')
     <link href="{{asset('css/user.css')}}" rel="stylesheet">
 <!-- <link href="{{asset('css/app.css')}}" rel="stylesheet"> -->
 @endsection

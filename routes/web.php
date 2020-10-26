@@ -18,32 +18,53 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+//Plugins
 Route::get('/plugins', 'App\Http\Controllers\PluginsController@show')->name('plugins');
-Route::get('/ascend', 'App\Http\Controllers\AscendController@show')->name('ascend');
-Route::get('/creation', 'App\Http\Controllers\CreationController@show')->name('creation');
-Route::get('/echo', 'App\Http\Controllers\EchoController@show')->name('echo');
-Route::get('/reflection', 'App\Http\Controllers\ReflectionController@show')->name('reflection');
-Route::get('/sky', 'App\Http\Controllers\SkyController@show')->name('sky');
-Route::get('/space', 'App\Http\Controllers\SpaceController@show')->name('space');
-Route::get('/storm', 'App\Http\Controllers\StormController@show')->name('storm');
+Route::get('/plugins/ascend', 'App\Http\Controllers\PluginsController@showAscend')->name('ascend');
+Route::get('/plugins/creation', 'App\Http\Controllers\PluginsController@showCreation')->name('creation');
+Route::get('/plugins/echo', 'App\Http\Controllers\PluginsController@showEcho')->name('echo');
+Route::get('/plugins/reflection', 'App\Http\Controllers\PluginsController@showReflection')->name('reflection');
+Route::get('/plugins/sky', 'App\Http\Controllers\PluginsController@showSky')->name('sky');
+Route::get('/plugins/space', 'App\Http\Controllers\PluginsController@showSpace')->name('space');
+Route::get('/plugins/storm', 'App\Http\Controllers\PluginsController@showStorm')->name('storm');
 
+
+//Packs
 Route::get('/packs', 'App\Http\Controllers\PacksController@show')->name('packs');
-Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
-
-Route::get('/community', function () {
-    $presets = App\Models\Presets::take(3)->latest()->get();
-
-    return view('community', [
-        'presets' => $presets
-    ]);
-})->name('community');
-Route::get('community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
-// Route::get('community/{presets}', 'App\Http\Controllers\CommunityController@show');
 
 
+//Community
+// Route::get('/community', function () {
+//     return view('community', [
+//         'presets' => App\Models\Presets::take(5)->latest()->get()
+//     ]);
+// })->name('community');
+Route::get('/community', 'App\Http\Controllers\CommunityController@index')->name('community');
+Route::post('/community', 'App\Http\Controllers\CommunityController@store');
+Route::get('/community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
+
+
+
+// Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
+// Route::get('/community', function () {
+//     $presets = App\Models\Presets::take(3)->latest()->get();
+
+//     return view('community', [
+//         'presets' => $presets
+//     ]);
+
+// })->name('community');
+// Route::post('/community', 'App\Http\Controllers\CommunityController@store');
+// Route::get('/community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
+// // Route::get('community/{presets}', 'App\Http\Controllers\CommunityController@show');
+// Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
+
+
+//Support
 Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('support');
-Auth::routes();
 
+
+//Account
+Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/account', [App\Http\Controllers\DashboardController::class, 'show'])->name('account');

@@ -5,12 +5,13 @@
         <div class="cmn-cont_tables">
             <div class="cmn-cont_title">
                 <h2>Ascend</h2>
-                <!-- @guest
-                @else -->
-                <a href="">Upload Preset</a>
-                <!-- @endguest -->
+                @guest
+                <a></a>
+                @else
+                <a href="{{ route('upload_preset')}}">Upload Preset</a>
+                @endguest
             </div>
-                <form class="cmn-cont_form">
+            <form class="cmn-cont_form">
                     <label>Filter</label>
                     <select>
                         <option>Top Rated</option>
@@ -31,51 +32,33 @@
                     <th class="cmn-tbl-like"></th>
                     <th class="cmn-tbl-dwnl"></th>
                 </tr>
-                <!-- @foreach -->
+                <!-- @foreach ($presets as $preset) -->
                 <tr>
                     <td class="cmn-tbl-fav">
-                        <!-- @guest
+                        @guest
                         <img class="icon-grey" src="{{ asset('img/favorite-icon.png')}}">
-                        @else -->
+                        @else
                         <img src="{{ asset('img/favorite-icon.png')}}">
-                        <!-- @endguest -->
+                        @endguest
                     </td>
-                    <td class="cmn-tbl-pt"></td>
-                    <td class="cmn-tbl-crt"></td>
-                    <td class="cmn-tbl-ctg"></td>
+                    <!-- <td class="cmn-tbl-pt">{{ $preset->preset_title }}</td>
+                    <td class="cmn-tbl-crt">{{ $preset->creator }}</td>
+                    <td class="cmn-tbl-ctg">{{ $preset->category }}</td> -->
                     <td class="cmn-tbl-like">
-                        <!-- @guest
+                        @guest
                         <img class="icon-grey" src="{{ asset('img/like-icon.png')}}"></td>
-                        @else -->
+                        @else
                         <img src="{{ asset('img/like-icon.png')}}"></td>
-                        <!-- @endguest -->
+                        @endguest
                     <td class="cmn-tbl-dwnl">
-                        <!-- @guest
+                        @guest
                         <img class="icon-grey" src="{{ asset('img/download-icon.png')}}">
-                        @else -->
+                        @else
                         <img src="{{ asset('img/download-icon.png')}}">
-                        <!-- @endguest -->
+                        @endguest
                     </td>
                 </tr>
                 <!-- @endforeach -->
-            </table>
-        </div>
-
-        <div class="cmn-cont_tables">
-            <h2>Creation</h2>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Maker</th>
-                    <th>Likes</th>
-                    <th>Favorite</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </table>
         </div>
     </div>
