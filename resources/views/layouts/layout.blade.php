@@ -75,9 +75,10 @@
                     <h2>{{ Auth::user()->email }}</h2>
                 </div>
                 <div class="dropdown_list-items">
-                    <a href="{{ route('login')}}">Account</a>
-                    <a href="">Purchase History</a>
-                    <a href="">Presets & Wishlist</a>
+                    <a href="{{ route('login')}}">View Your Account</a>
+                    <a href="{{ route('edit-account')}}">Edit Account</a>
+                    <a href="{{ route('purchase-history')}}">Purchase History</a>
+                    <a href="{{ route('presets-and-wishlist')}}">Presets & Wishlist</a>
                 </div>
                 <div class="dropdown-signout">
                     <a class="nav-ddc_link" href="{{ route('logout') }}"
@@ -103,7 +104,7 @@
                         <div class="footer-cont">
                             <h1>Shop & Services</h1>
                                 <li><a href="">Shop Info & FAQ</a></li>
-                                <li><a href="{{ route('account')}}">My Account</a></li>
+                                <li><a href="{{ route('login')}}">My Account</a></li>
                                 <li><a href="{{ route('support')}}">Support</a></li>
                                 <li><a href="">Product Help Files</a></li>
                         </div>

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title')
     <title>Ethereal - Community</title>
@@ -12,7 +12,7 @@
                 @guest
                 <a></a>
                 @else
-                <a href="{{ route('upload_preset')}}">Upload Preset</a>
+                <a href="{{ route('upload-preset')}}">Upload Preset</a>
                 @endguest
             </div>
             <form action="{{ route('community')}}" class="cmn-cont_form">
@@ -36,13 +36,15 @@
                     <th class="cmn-tbl-like"></th>
                     <th class="cmn-tbl-dwnl"></th>
                 </tr>
-                @foreach ($presets as $preset)
+                @forelse ($presets as $preset)
                 <tr>
                     <td class="cmn-tbl-fav">
                         @guest
                         <img class="icon-grey" src="{{ asset('img/favorite-icon.png')}}">
                         @else
-                        <img src="{{ asset('img/favorite-icon.png')}}">
+                        <form action="">
+                            <button rype="submit" class="favorite_btn"><img src="{{ asset('img/favorite-icon.png')}}"></button>
+                        </form>
                         @endguest
                     </td>
                     <td class="cmn-tbl-pt">{{$preset->preset_title}}</td>
@@ -62,7 +64,16 @@
                         @endguest
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <tr>
+                    <td class="cmn-tbl-fav"></td>
+                    <td class="cmn-tbl-pt">No Matching Results</td>
+                    <td class="cmn-tbl-crt"></td>
+                    <td class="cmn-tbl-ctg"></td>
+                    <td class="cmn-tbl-like"></td>
+                    <td class="cmn-tbl-dwnl"></td>
+                </tr>
+                @endforelse
             </table>
         </div>
     </div>

@@ -1,36 +1,37 @@
-.logreg-cont {
+/*-----Sign In/Sign Up-----*/
+.sign-body {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 50vh;
+    align-items: center;
 }
 
-.logreg-cont-body {
+.sign-cont {
     padding: 2.5vh 5vw;
 }
 
-.logreg-cont-body form {
+.sign-cont form {
     width: 25vw;
 }
 
-.logreg-cont_header {
+.sign_header {
     margin-bottom: 2vh;
-    text-transform: uppercase;
     font-size: 1.75em;
+    text-transform: uppercase;
     color: #f0f0f0;
 }
 
-.logreg-cont-box label {
+.sign-cont-box label {
     font-size: 0.8em;
     font-weight: lighter;
     color: #f0f0f0;
 }
 
-.logreg-cont_inp {
+.sign_input {
     padding: 1vh 0;
 }
 
-.logreg-cont_inp input {
+.sign_input input {
     border: 1px solid #f0f0f0;
     padding: 5px;
     width: 100%;
@@ -38,32 +39,32 @@
     background-color: #f0f0f0;
 }
 
-.logreg-cont-check {
+.sign-check {
     display: flex;
     justify-content: flex-end;
 }
 
-.logreg-cont-check input {
+.sign-check input {
     margin-right: 0.5vw;
 }
 
-.logreg-cont-check label {
+.sign-check label {
     font-size: 0.8em;
     font-weight: lighter;
     color: #f0f0f0;
 }
 
-.logreg-cont-sbmt {
+.sign_submit {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 1vh 0;
+    align-items: center;
 }
 
-.logreg-cont-sbmt button {
+.sign_submit button {
+    border: 1px solid #757575;
     padding: 0.75vh 0.75vw;
     width: 100%;
-    border: 1px solid #757575;
     font-size: 0.7em;
     background-color: #757575;
     color: #f0f0f0;
@@ -71,13 +72,13 @@
     cursor: pointer;
 }
 
-.logreg-cont-sbmt button:hover {
+.sign_submit button:hover {
     border: 1px solid #333333;
     background-color: #333333;
     color: #f0f0f0;
 }
 
-.logreg-cont-sbmt a {
+.sign_submit a {
     padding: 1vh;
     font-size: 0.75em;
     font-weight: lighter;
@@ -85,124 +86,134 @@
     transition: 0.3s;
 }
 
-.logreg-cont-sbmt a:hover {
+.sign_submit a:hover {
     color: #333333;
 }
 
-.logreg-cont-btm {
+.sign-cont-btm {
     display: flex;
     justify-content: center;
     padding: 1vh 0;
-    color: #f0f0f0;
     font-size: 0.8em;
     font-weight: lighter;
+    color: #f0f0f0;
 }
 
-.logreg-cont-btm a {
+.sign-cont-btm a {
     padding-left: 0.5vw;
     color: #757575;
     transition: 0.3s;
 }
 
-.logreg-cont-btm a:hover {
+.sign-cont-btm a:hover {
     color: #333333;
 }
 
-/*-----Acc-----*/
-.acc-cont {
+/*-----Dashboard-----*/
+.dashboard {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
+    align-items: center;
 }
 
-.acc-cont-body {
+.dashboard-body {
     display: flex;
 }
 
-.acc-cont_list {
+.dashboard_list {
     margin: 1vh 1vw;
 }
 
-.acc-cont-user-data {
+.dashboard-user-data {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 20vh;
+    align-items: center;
 }
 
-.acc-cont-user-data h1 {
-    font-size: 1.1em;
+.dashboard-user-data h1 {
+    font-size: 1em;
     font-weight: normal;
     color: #f0f0f0;
 }
 
-.acc-cont-user-data h2 {
-    font-size: 1em;
+.dashboard-user-data h2 {
+    font-size: 0.9em;
     font-weight: lighter;
     color: #f0f0f0;
 }
 
-.acc-cont_link {
+.dashboard_link {
     text-decoration: none;
 }
 
-.acc-cont_link-box {
-    padding: 1vh 1vw;
+.dashboard_link-item {
     border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    margin: 1vh 0;
+    padding: 1vh 1vw;
+    font-size: 0.9em;
+    font-weight: lighter;
+    text-align: center;
     color: #f0f0f0;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-.acc-cont_link-box:hover {
-    background-color: #757575; 
+.dashboard_link-item:hover {
+    border: 1px solid #757575;
+    color: #757575;
 }
 
-.acc-cont-box {
+.dashboard-cont {
     margin: 1vh 1vw;
     width: 50vw;
     height: 50vh;
 }
 
-.acc-cont-info {
+.dashboard-cont h1 {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 1vh 1vw;
+    font-size: 1.5em;
+    font-size: normal;
+    color: #f0f0f0;
+}
+
+.dashboard-cont-box {
     display: flex;
     flex-direction: column;
 }
 
-.acc-cont-info-box {
+.dashboard-row {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.acc-cont-box h1{
-    padding: 1vh 1vw;
-    border-bottom: 1px solid #f0f0f0;
-    color: #f0f0f0;
-}
-
-.acc-cont-info-box h2 {
-    color: #f0f0f0;
-    font-size: 1.1em;
-    padding: 2vh 1vw 1vh 1vw
-}
-
-.acc-cont-info-cont {
-    display: flex;
-    width: 100%;
+.dashboard-row h2 {
     padding: 2vh 1vw 1vh 1vw;
+    font-size: 0.9em;
+    color: #f0f0f0;
 }
 
-.acc-cont-info-cont p {
-    flex:1;
+.dashboard-row-cont {
+    display: flex;
+    padding: 2vh 1vw 2vh 1vw;
+    width: 100%;
+}
+
+.dashboard-row-cont p {
+    flex: 1;
+    font-size: 0.9em;
     font-weight: lighter;
     color: #c7c7c7;
 }
 
-.acc-cont-info-cont a{
+.dashboard-row-cont a {
     justify-content: flex-end;
     color: #757575;
+    transition: 0.2s;
 }
 
-.acc-cont-info-cont a:hover {
+.dashboard-row-cont a:hover {
     color: #3e3e3e;
 }

@@ -7,10 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Presets extends Model
 {
+    protected $fillable = ['user_id', 'preset_title', 'creator', 'category'];
+
     // use HasFactory;
     public function scopeSearch($query, $s)
     {
       return $query->where('preset_title', 'like', '%' .$s. '%')
           ->orWhere('creator', 'like', '%' .$s. '%');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 }

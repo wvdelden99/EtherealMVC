@@ -742,6 +742,12 @@
     border-radius: 5px;
 }
 
+.cmnup-cont select {
+    margin: 1vh 0;
+    padding: 0.25vh 0.25vw;
+    border-radius: 5px;
+}
+
 .cmnup-cont button {
     background-color: #757575;
     color: #f0f0f0;
@@ -749,7 +755,7 @@
     padding: 1vh 0;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 1vh;
+    margin-top: 3vh;
 }
 
 .cmnup-cont button:hover {
@@ -757,10 +763,17 @@
     border-color: #3e3e3e ;
 }
 
+.favorite_btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 .error {
+    font-size: 0.9em;
     color: red;
 }
 
-.error-inp{
+.error-inp, .error-sel {
     border: 1px solid red;
 }

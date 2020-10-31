@@ -23,11 +23,23 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('auth.dashboard.dashboard');
     }
 
     public function show()
     {
-        return view('auth.account');
+        return view('auth.dashboard.edit-account');
+    }
+    public function showPH()
+    {
+        return view('auth.dashboard.purchase-history');
+    }
+    public function showPW()
+    {
+        return view('auth.dashboard.presets-and-wishlist');
+    }
+    public function showAdmin()
+    {
+        return view('auth.dashboard.admin');
     }
 }

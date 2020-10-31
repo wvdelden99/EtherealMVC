@@ -34,30 +34,9 @@ Route::get('/packs', 'App\Http\Controllers\PacksController@show')->name('packs')
 
 
 //Community
-// Route::get('/community', function () {
-//     return view('community', [
-//         'presets' => App\Models\Presets::take(5)->latest()->get()
-//     ]);
-// })->name('community');
 Route::get('/community', 'App\Http\Controllers\CommunityController@index')->name('community');
 Route::post('/community', 'App\Http\Controllers\CommunityController@store');
-Route::get('/community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
-
-
-
-// Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
-// Route::get('/community', function () {
-//     $presets = App\Models\Presets::take(3)->latest()->get();
-
-//     return view('community', [
-//         'presets' => $presets
-//     ]);
-
-// })->name('community');
-// Route::post('/community', 'App\Http\Controllers\CommunityController@store');
-// Route::get('/community/create', 'App\Http\Controllers\CommunityController@create')->name('upload_preset');
-// // Route::get('community/{presets}', 'App\Http\Controllers\CommunityController@show');
-// Route::get('/community', 'App\Http\Controllers\CommunityController@show')->name('community');
+Route::get('/community/upload-preset', 'App\Http\Controllers\CommunityController@create')->name('upload-preset');
 
 
 //Support
@@ -67,4 +46,7 @@ Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('sup
 //Account
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/account', [App\Http\Controllers\DashboardController::class, 'show'])->name('account');
+Route::get('/edit-account', [App\Http\Controllers\DashboardController::class, 'show'])->name('edit-account');
+Route::get('/purchase-history', [App\Http\Controllers\DashboardController::class, 'showPH'])->name('purchase-history');
+Route::get('/presets-and-wishlist', [App\Http\Controllers\DashboardController::class, 'showPW'])->name('presets-and-wishlist');
+Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'showAdmin'])->name('admin');

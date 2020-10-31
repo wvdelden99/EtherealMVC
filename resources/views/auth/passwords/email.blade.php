@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title')
     <title>Ethereal - Reset Password</title>
@@ -10,9 +10,9 @@
 @endsection
 
 @section('content')
-    <div class="logreg-cont">
-        <div class="logreg-cont-body">
-            <div class="logreg-cont_header">{{ __('Reset Password') }}</div>
+    <div class="sign-body">
+        <div class="sign-cont">
+            <div class="sign_header">{{ __('Reset Password') }}</div>
 
             <div class="card-body">
                 @if (session('status'))
@@ -24,10 +24,10 @@
                 <form method="POST" action="{{ route('password.email') }}">
                     @csrf
 
-                    <div class="logreg-cont-box">
+                    <div class="sign-cont-box">
                         <label for="email">{{ __('E-Mail Address') }}</label>
 
-                        <div class="logreg-cont_inp">
+                        <div class="sign_input">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="logreg-cont-sbmt">
+                    <div class="sign_submit">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Send Password Reset Link') }}
                         </button>

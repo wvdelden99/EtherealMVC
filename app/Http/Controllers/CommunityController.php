@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Presets;
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
@@ -30,18 +32,19 @@ class CommunityController extends Controller
 
     public function create()
     {
-      return view('presets.create');
+      return view('presets.upload-preset', [
+        'categories' => Category::all()
+      ]);
     }
 
     public function store()
     {
-      $preset = new Presets();
-
-      $preset->preset_title = request('preset_title');
-      $preset->creator = request('creator');
-      $preset->category = request('category');
-
-      $preset->save();
+      Presets::create(request()->validate([
+        'user_id' =>  'required',
+        'preset_title' => ['required', 'min:2', 'max:100'],
+        'creator' => 'required',
+        'category' => 'required'
+      ]));
 
       return redirect('/community');
     }
