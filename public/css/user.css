@@ -2,7 +2,7 @@
 .sign-body {
     display: flex;
     justify-content: center;
-    height: 50vh;
+    height: 75vh;
     align-items: center;
 }
 
@@ -33,6 +33,7 @@
 
 .sign_input input {
     border: 1px solid #f0f0f0;
+    border-radius: 3px;
     padding: 5px;
     width: 100%;
     height: 2.5vh;
@@ -189,15 +190,43 @@
     border-bottom: 1px solid #f0f0f0;
 }
 
-.dashboard-row h2 {
+.dashboard-row-header {
     padding: 2vh 1vw 1vh 1vw;
+    display: flex;
+}
+
+.dashboard-row-header label {
+    flex: 1;
     font-size: 0.9em;
     color: #f0f0f0;
 }
 
+.edit_btn, .edit_btn2, .edit_btn3 {
+    justify-content: flex-end;
+    margin-top: -1vh;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 1vh 0.5vw;
+    width: 4vw;
+    background-color: #151515;
+    font-size: 0.8em;
+    color: #f0f0f0;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit_btn:hover, .edit_btn2:hover, .edit_btn3:hover {
+    border-color: #757575;
+    color: #757575;
+}
+
+.edit_btn.hide, .edit_btn2.hide, .edit_btn3.hide {
+    display: none;
+}
+
 .dashboard-row-cont {
     display: flex;
-    padding: 2vh 1vw 2vh 1vw;
     width: 100%;
 }
 
@@ -208,12 +237,69 @@
     color: #c7c7c7;
 }
 
-.dashboard-row-cont a {
-    justify-content: flex-end;
-    color: #757575;
+.dashboard-data, .dashboard-data2, .dashboard-data3 {
+    display: flex;
+    padding: 1vh 1vw;
+    width: 100%;
+}
+
+.dashboard-data.hide, .dashboard-data2.hide, .dashboard-data3.hide {
+    display: none;
+}
+
+.dashboard-edit, .dashboard-edit2, .dashboard-edit3 {
+    display: none;
+    padding: 1vh 1vw 2vh 1vw;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dashboard-edit.show, .dashboard-edit2.show, .dashboard-edit3.show {
+    display: flex;
+}
+
+.dashboard-edit input, .dashboard-edit2 input, .dashboard-edit3 input {
+    margin: 1vh 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    padding: 0.75vh 0.75vw;
+    background-color: #151515;
+    font-size: 0.9em;
+    color: #f0f0f0;
+}
+
+.dashboard-btn {
+    padding: 2vh 0 1vh 0;
+}
+
+.dashboard-btn button {
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 0.75vh 0.5vw;
+    width: 8vw;
+    font-size: 0.8em;
+    outline: 0;
+    cursor: pointer;
     transition: 0.2s;
 }
 
-.dashboard-row-cont a:hover {
-    color: #3e3e3e;
+.submit-btn {
+    margin-right: 0.5vw;
+    background-color: #f0f0f0;
+    color: #151515;
+}
+
+.submit-btn:hover {
+    border: 1px solid #757575;
+    background-color: #757575;
+}
+
+.alt-btn, .alt-btn2, .alt-btn3 {
+    background-color: #151515;
+    color: #f0f0f0;
+}
+
+.alt-btn:hover, .alt-btn2:hover, .alt-btn3:hover {
+    border: 1px solid #757575;
+    color: #757575;
 }

@@ -24,7 +24,7 @@
                 <a class="dashboard_link" href="{{ route('presets-and-wishlist')}}">
                     <div class="dashboard_link-item">Presets & Wishlist</div>
                 </a>
-                @can('admin')
+                @can('edit')
                     <a class="dashboard_link" href="{{ route('admin')}}">
                         <div class="dashboard_link-item">Admin Tab</div>
                     </a>

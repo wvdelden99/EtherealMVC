@@ -20,7 +20,7 @@
                     <label for="email">{{ __('E-Mail Address') }}</label>
 
                     <div class="sign_input">
-                        <input id="email" type="email" class="@error('email') error_inp @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input class="@error('email') error_input @enderror" type="email" id="email" name="email" value="{{ old('email') }}" autocomplete="email" autofocus required>
 
                         @error('email')
                             <p class="error">{{ $message }}</p>
@@ -32,7 +32,7 @@
                     <label for="password">{{ __('Password') }}</label>
 
                     <div class="sign_input">
-                        <input id="password" type="password" class="@error('password') error_inp @enderror" name="password" required autocomplete="current-password">
+                        <input class="@error('password') error_input @enderror" type="password" id="password" name="password" autocomplete="current-password" required>
 
                         @error('password')
                             <p class="error">{{ $message }}</p>

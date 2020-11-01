@@ -2,6 +2,7 @@
 document.querySelector('.nav-list_icon-item').addEventListener('click', function () {
   document.querySelector('.dropdown').classList.toggle('dropdown-show')
 });
+
 /*-----Nav Menu/Sidenav-----*/
 const menuBtn = document.querySelector('.nav-menu');
 const sideNav = document.querySelector('.sidenav');
@@ -20,6 +21,58 @@ menuBtn.addEventListener('click', () => {
     sideNav.classList.remove("sidenav-open");
     sidenavTransparent.classList.remove("transparent-active");
   }
+});
+
+/*-----Edit Button-----*/
+  /*-----Edit Button Personal Info-----*/
+const editBtn = document.querySelector('.edit_btn');
+const cancelBtn = document.querySelector('.alt-btn');
+const dataArea = document.querySelector('.dashboard-data');
+const editArea = document.querySelector('.dashboard-edit');
+
+editBtn.addEventListener('click', () => {
+    editBtn.classList.add('hide');
+    dataArea.classList.add("hide");
+    editArea.classList.add("show");
+});
+cancelBtn.addEventListener('click', () => {
+    editBtn.classList.remove('hide');
+    dataArea.classList.remove("hide");
+    editArea.classList.remove("show");
+});
+
+  /*-----Edit Button Email-----*/
+const editBtn2 = document.querySelector('.edit_btn2');
+const cancelBtn2 = document.querySelector('.alt-btn2');
+const dataArea2 = document.querySelector('.dashboard-data2');
+const editArea2 = document.querySelector('.dashboard-edit2');
+  
+editBtn2.addEventListener('click', () => {
+    editBtn2.classList.add('hide');
+    dataArea2.classList.add("hide");
+    editArea2.classList.add("show");
+});
+cancelBtn2.addEventListener('click', () => {
+    editBtn2.classList.remove('hide');
+    dataArea2.classList.remove("hide");
+    editArea2.classList.remove("show");
+});
+
+  /*-----Edit Button Password-----*/
+const editBtn3 = document.querySelector('.edit_btn3');
+const cancelBtn3 = document.querySelector('.alt-btn3');
+const dataArea3 = document.querySelector('.dashboard-data3');
+const editArea3 = document.querySelector('.dashboard-edit3');
+    
+editBtn3.addEventListener('click', () => {
+    editBtn3.classList.add('hide');
+    dataArea3.classList.add("hide");
+    editArea3.classList.add("show");
+});
+cancelBtn3.addEventListener('click', () => {
+    editBtn3.classList.remove('hide');
+    dataArea3.classList.remove("hide");
+    editArea3.classList.remove("show");
 });
 
 /*----Nav Scroll Transistion-----*/

@@ -47,6 +47,7 @@ Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('sup
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/edit-account', [App\Http\Controllers\DashboardController::class, 'show'])->name('edit-account');
+Route::patch('/edit-account', [App\Http\Controllers\DashboardController::class, 'update']);
 Route::get('/purchase-history', [App\Http\Controllers\DashboardController::class, 'showPH'])->name('purchase-history');
 Route::get('/presets-and-wishlist', [App\Http\Controllers\DashboardController::class, 'showPW'])->name('presets-and-wishlist');
-Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'showAdmin'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'showAdmin'])->middleware('can:edit')->name('admin');

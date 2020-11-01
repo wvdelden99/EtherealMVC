@@ -78,36 +78,45 @@
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
-                    <div class="plg-cont-mid3-top">
-                        <img src="{{asset('img/reflection-icon-000.png')}}">
-                        <h1 class="plg-cont-mid3_title">reflection</h1>
-                    </div>
-                    <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
-                    <div class="plg-cont-mid3_btn pcmb">
-                        <button class="plg-cont-mid3_btn-tff">Try for Free*</button>
-                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="plg-cont-mid3-box">
-                    <div class="plg-cont-mid3-top">
-                        <img src="{{asset('img/effects-bundle-icon.png')}}">
-                        <h1 class="plg-cont-mid3_title">effects bundle</h1>
-                    </div>
-                    <a href="">View More</a>
-                    <h1 class="plg-cont-mid3-price"><span>$</span>250</h1>
-                    <div class="plg-cont-mid3_btn">
-                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                        <div class="plg-cont-mid3_img">
+                            <button><img src="{{ asset('img/like-icon.png')}}"></button>
+                        </div>
+                    <div class="plg-cont-mid3-box-cont pcmbh">
+                        <div class="plg-cont-mid3-top">
+                            <img src="{{asset('img/reflection-icon-000.png')}}">
+                            <h1 class="plg-cont-mid3_title">reflection</h1>
+                        </div>
+                        <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
+                        <div class="plg-cont-mid3_btn pcmb">
+                            <button class="plg-cont-mid3_btn-tff">Try for Free*</button>
+                            <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 <div class="plg-cont-mid3-box">
-                    <div class="plg-cont-mid3-top">
-                        <img src="{{asset('img/creation-bundle-icon.png')}}">
-                        <h1 class="plg-cont-mid3_title">creation bundle</h1>
+                    <div class="plg-cont-mid3-box-cont">
+                        <div class="plg-cont-mid3-top">
+                            <img src="{{asset('img/effects-bundle-icon.png')}}">
+                            <h1 class="plg-cont-mid3_title">effects bundle</h1>
+                        </div>
+                        <a href="">View More</a>
+                        <h1 class="plg-cont-mid3-price"><span>$</span>250</h1>
+                        <div class="plg-cont-mid3_btn">
+                            <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                        </div>
                     </div>
-                    <a href="">View More</a>
-                    <h1 class="plg-cont-mid3-price"><span>$</span>500</h1>
-                    <div class="plg-cont-mid3_btn">
-                        <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                </div>
+                <div class="plg-cont-mid3-box">
+                    <div class="plg-cont-mid3-box-cont">
+                        <div class="plg-cont-mid3-top">
+                            <img src="{{asset('img/creation-bundle-icon.png')}}">
+                            <h1 class="plg-cont-mid3_title">creation bundle</h1>
+                        </div>
+                        <a href="">View More</a>
+                        <h1 class="plg-cont-mid3-price"><span>$</span>500</h1>
+                        <div class="plg-cont-mid3_btn">
+                            <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -668,7 +668,7 @@ li {
 
 /*-----Fade----*/
 .fade-in {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 250ms ease-in;
 }
 

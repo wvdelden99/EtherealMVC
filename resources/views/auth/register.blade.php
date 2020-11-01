@@ -20,7 +20,7 @@
                     <label for="name">{{ __('Name') }}</label>
 
                     <div class="sign_input">
-                        <input id="name" type="text" class="@error('name') error_inp @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input class="@error('name') error_input @enderror" type="text" id="name" name="name" value="{{ old('name') }}" autocomplete="name" autofocus required>
 
                         @error('name')
                             <p class="error">{{ $message }}</p>
@@ -32,7 +32,7 @@
                     <label for="email">{{ __('E-Mail Address') }}</label>
 
                     <div class="sign_input">
-                        <input id="email" type="email" class="@error('email') error_inp @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        <input class="@error('email') error_input @enderror" type="email" id="email" name="email" value="{{ old('email') }}" autocomplete="email" required>
 
                         @error('email')
                             <p class="error">{{ $message }}</p>
@@ -44,10 +44,10 @@
                     <label for="password">{{ __('Password') }}</label>
 
                     <div class="sign_input">
-                        <input id="password" type="password" class="@error('password') error_inp @enderror" name="password" required autocomplete="new-password">
+                        <input class="@error('password') error_input @enderror" type="password" id="password" name="password" autocomplete="new-password" required>
 
                         @error('password')
-                            <p class="error">{{ message }}</p>
+                            <p class="error">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <label for="password-confirm">{{ __('Confirm Password') }}</label>
 
                     <div class="sign_input">
-                        <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
+                        <input type="password" id="password-confirm" name="password_confirmation" autocomplete="new-password" required>
                     </div>
                 </div>
 

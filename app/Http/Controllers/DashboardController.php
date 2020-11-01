@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -41,5 +42,18 @@ class DashboardController extends Controller
     public function showAdmin()
     {
         return view('auth.dashboard.admin');
+    }
+
+    public function update(User $user)
+    {
+        $attributes = request()->validate([
+            'name' => ['string', 'max:255'],
+            'email' => ['string', 'email', 'max:255'],
+            'password' => ['string', 'min:8', 'max:255', 'confirmed']
+        ]);
+
+        $user->update($attributes);
+
+        return redirect('/edit-account');
     }
 }

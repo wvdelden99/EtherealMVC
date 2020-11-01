@@ -79,6 +79,9 @@
                     <a href="{{ route('edit-account')}}">Edit Account</a>
                     <a href="{{ route('purchase-history')}}">Purchase History</a>
                     <a href="{{ route('presets-and-wishlist')}}">Presets & Wishlist</a>
+                    @can('edit')
+                    <a href="{{ route('admin')}}">Admin Tab</a>
+                    @endcan
                 </div>
                 <div class="dropdown-signout">
                     <a class="nav-ddc_link" href="{{ route('logout') }}"
