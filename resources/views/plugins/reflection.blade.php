@@ -78,9 +78,9 @@
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
-                        <div class="plg-cont-mid3_img">
-                            <button><img src="{{ asset('img/like-icon.png')}}"></button>
-                        </div>
+                        <form method="POST" action="{{ route('reflection')}}" class="plg-cont-mid3_img">
+                            <button type="submit"><img src="{{ asset('img/like-icon.png')}}"></button>
+                        </form>
                     <div class="plg-cont-mid3-box-cont pcmbh">
                         <div class="plg-cont-mid3-top">
                             <img src="{{asset('img/reflection-icon-000.png')}}">

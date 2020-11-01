@@ -11,16 +11,23 @@
             @csrf
                 <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id}}">
             <label for="preset_title">Preset Title</label>
-                <input type="text"  name="preset_title" id="preset_title">
+                <input class="@error('preset_title') error_input @enderror" type="text"  name="preset_title" id="preset_title" value="{{ old('preset_title')}}" autofocus requireds>
+                    @error('preset_title')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
 
                 <input type="hidden" name="creator" id="creator" value="{{Auth::user()->name}}">
 
             <label for="category">Category</label>
-                <select name="category" id="category">
+                <select class="@error('preset_title') error_select @enderror" name="category" id="category" required>
+                        <option disabled selected value>-----Select Option-----</option>
                     @foreach($categories as $category)
                         <option value="{{$category->name}}">{{$category->name}}</opition>
                     @endforeach
                 </select>
+                    @error('category')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
 
                 <button class="button is-link" type="submit">Submit</button>
             </form>

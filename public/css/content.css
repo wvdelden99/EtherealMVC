@@ -667,6 +667,12 @@
     width: 225px;
 }
 
+.cmn-tbl-ctg select {
+    border: 1px solid #f0f0f0;
+    background-color: #151515;
+    color: #f0f0f0;
+}
+
 .cmn-th-ctg {
     border-right: 1px solid #f0f0f0;
 }
@@ -803,6 +809,6 @@
     color: #c80000;
 }
 
-.error_input, .error-sel {
+.error_input, .error_select {
     border: 1px solid #c80000 !important;
 }

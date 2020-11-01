@@ -13,6 +13,8 @@ class CommunityController extends Controller
     {
       $s = $request->input('s');
 
+      $category = Category::take('name');
+
       $presets = Presets::take(5)->latest()
         ->search($s)
         ->get();
@@ -25,9 +27,12 @@ class CommunityController extends Controller
       }
       elseif($request['sort'] == "ztoa"){
         $presets = Presets::take(5)->orderBy('preset_title', 'desc')->get();
+      }
+      elseif($request['sort'] == "category"){
+        $presets = Presets::take(5)->orderBy('category')->get();
     }
 
-      return view('community', ['presets' => $presets]);
+      return view('community', ['presets' => $presets], ['categories' => Category::all()]);
     }
 
     public function create()

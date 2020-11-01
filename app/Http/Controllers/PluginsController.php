@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Wish;
 use Illuminate\Http\Request;
 
 class PluginsController extends Controller
@@ -28,6 +29,8 @@ class PluginsController extends Controller
     {
       return view ('plugins.reflection');
     }
+
+
     public function showSky()
     {
       return view ('plugins.sky');

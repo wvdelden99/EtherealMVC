@@ -45,9 +45,10 @@ Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('sup
 
 //Account
 Auth::routes();
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/edit-account', [App\Http\Controllers\DashboardController::class, 'show'])->name('edit-account');
-Route::patch('/edit-account', [App\Http\Controllers\DashboardController::class, 'update']);
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
+Route::get('/edit', 'App\Http\Controllers\DashboardController@showEdit')->name('edit');
+Route::patch('/edit-account', 'App\Http\Controllers\DashboardController@update');
+Route::get('/edit-account', [App\Http\Controllers\DashboardController::class, 'showEA'])->name('edit-account');
 Route::get('/purchase-history', [App\Http\Controllers\DashboardController::class, 'showPH'])->name('purchase-history');
 Route::get('/presets-and-wishlist', [App\Http\Controllers\DashboardController::class, 'showPW'])->name('presets-and-wishlist');
 Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'showAdmin'])->middleware('can:edit')->name('admin');

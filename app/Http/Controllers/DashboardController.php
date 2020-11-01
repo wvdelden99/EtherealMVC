@@ -22,12 +22,12 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function show()
     {
         return view('auth.dashboard.dashboard');
     }
 
-    public function show()
+    public function showEA()
     {
         return view('auth.dashboard.edit-account');
     }
@@ -44,15 +44,32 @@ class DashboardController extends Controller
         return view('auth.dashboard.admin');
     }
 
+    public function showEdit()
+    {
+        return view('auth.dashboard.edit');
+    }
+
     public function update(User $user)
     {
         $attributes = request()->validate([
-            'name' => ['string', 'max:255'],
-            'email' => ['string', 'email', 'max:255'],
-            'password' => ['string', 'min:8', 'max:255', 'confirmed']
+
+            'name' => ['string', 'required', 'max:255'],
+            'email' => [
+                'string',
+                'required',
+                'email',
+                'max:255',
+            ],
+            'password' => [
+                'string',
+                'required',
+                'min:8',
+                'max:255',
+                'confirmed',
+            ],
         ]);
 
-        $user->update($attributes);
+       $user->update($attributes);
 
         return redirect('/edit-account');
     }
