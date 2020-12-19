@@ -20,6 +20,10 @@ li {
     list-style: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 /*-----Scrollbar-----*/
 ::-webkit-scrollbar {
     width: 0.75vw;
@@ -508,7 +512,6 @@ li {
     padding: 1vh 1vw;
     background-color: #151515;
     color: #f0f0f0;
-    cursor: pointer;
 }
 
 .footer_input button:hover {
