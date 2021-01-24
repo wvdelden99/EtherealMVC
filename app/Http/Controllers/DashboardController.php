@@ -48,36 +48,52 @@ class DashboardController extends Controller
 
     public function showEdit()
     {
-        return view('auth.dashboard.edit');
+        return view('auth.dashboard.edit', ['user' => $users]);
     }
 
-    public function update(User $user)
+    public function updateName(Request $request)
     {
-        $attributes = request()->validate([
+        $user=User::find($request->id);
+        $user->name=$request->name;
+        $user->save();
+        return redirect('edit-account');
+    }
 
-            'name' => ['string', 'required', 'max:255'],
-            'email' => [
-                'string',
-                'required',
-                'email',
-                'max:255',
-            ],
-            'password' => [
-                'string',
-                'required',
-                'min:8',
-                'max:255',
-                'confirmed',
-            ],
-        ]);
-
-       $user->update($attributes);
-
-        return redirect('/edit-account');
+    public function updateEmail(Request $request)
+    {
+        $user=User::find($request->id);
+        $user->email=$request->email;
+        $user->save();
+        return redirect('edit-account');
     }
 
     public function showNP()
     {
         return view('no-permission');
     }
+
+    // public function update(User $user)
+    // {
+    //     $attributes = request()->validate([
+
+    //         'name' => ['string', 'required', 'max:255'],
+    //         'email' => [
+    //             'string',
+    //             'required',
+    //             'email',
+    //             'max:255',
+    //         ],
+    //         'password' => [
+    //             'string',
+    //             'required',
+    //             'min:8',
+    //             'max:255',
+    //             'confirmed',
+    //         ],
+    //     ]);
+
+    //    $user->update($attributes);
+
+    //     return redirect('/edit-account');
+    // }
 }

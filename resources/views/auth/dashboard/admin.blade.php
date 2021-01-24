@@ -9,23 +9,24 @@
         <h1>Admin Tab</h1>
         <table class="admin-tbl">
                 <tr>
-                    <th class="adm-tl1">Name</th>
-                    <th class="adm-tl2">Email</th>
-                    <th class="adm-tl3">User</th>
-                    <th class="adm-tl3">Buyer</th>
-                    <th class="adm-tl3">Admin</th>
-                    <th class="adm-tl4"></th>
+                    <th class="tbl-flx5">Name</th>
+                    <th class="tbl-flx40">Email</th>
+                    <th class="tbl-flx10">User</th>
+                    <th class="tbl-flx10">Buyer</th>
+                    <th class="tbl-flx10">Admin</th>
+                    <th class="tbl-flx25"></th>
                 </tr>
             @foreach($users as $user)
             <form class="admin-cont" action="{{ route('reflection') }}" method="post">
                 <tr>
-                    <td class="adm-td1">{{ $user->name }}</td>
-                    <td class="adm-td2">{{ $user->email }} <input type="hidden" name="email" value="{{ $user->email }}"></td>
-                    <td class="adm-td3"><input type="checkbox" {{ $user->hasRole('User') ? 'checked' : '' }} name="role_user"></td>
-                    <td class="adm-td3"><input type="checkbox" {{ $user->hasRole('Buyer') ? 'checked' : '' }} name="role_buyer"></td>
-                    <td class="adm-td3"><input type="checkbox" {{ $user->hasRole('Admin') ? 'checked' : '' }} name="role_admin"></td>
+                    <td class="tbl-flx20">{{ $user->name }}</td>
+                    <td class="tbl-flx30">{{ $user->email }} <input type="hidden" name="email" value="{{ $user->email }}"></td>
+                    <td class="tbl-flx10"><input type="checkbox" {{ $user->hasRole('User') ? 'checked' : '' }} name="role_user"></td>
+                    <td class="tbl-flx10"><input type="checkbox" {{ $user->hasRole('Buyer') ? 'checked' : '' }} name="role_buyer"></td>
+                    <td class="tbl-flx10"><input type="checkbox" {{ $user->hasRole('Admin') ? 'checked' : '' }} name="role_admin"></td>
                     {{ csrf_field() }}
-                    <td class="adm-td4"><button type="submit" class="">Change Role</button>
+                    <td class="tbl-flx15"><button type="submit" class="">Change Role</button>
+                    <td class="tbl-flx5"><a href=""><img src="{{ asset('img/icon/cross-icon.png')}}"></a></td>
                 </tr>
             </form>
             @endforeach
