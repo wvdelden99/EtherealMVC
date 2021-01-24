@@ -37,6 +37,7 @@ Route::get('/packs', 'App\Http\Controllers\PacksController@show')->name('packs')
 
 //Community
 Route::get('/community', 'App\Http\Controllers\CommunityController@index')->name('community');
+Route::get('/changeStatus', 'App\Http\Controllers\CommunityController@changeStatus')->name('changeStatus');
 Route::post('/community', 'App\Http\Controllers\CommunityController@store');
 Route::get('/community/upload-preset', [ 
     'uses' => 'App\Http\Controllers\CommunityController@create',
@@ -51,13 +52,11 @@ Route::get('/support', 'App\Http\Controllers\SupportController@show')->name('sup
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
 Route::get('/edit', 'App\Http\Controllers\DashboardController@showEdit')->name('edit');
-// Route::patch('/edit-account', 'App\Http\Controllers\DashboardController@update');
 Route::get('/edit-account', [App\Http\Controllers\DashboardController::class, 'showEA'])->name('edit-account');
 Route::post('/edit-account', "App\Http\Controllers\DashboardController@updateName");
 Route::post('/edit-account', "App\Http\Controllers\DashboardController@updateEmail");
 Route::get('/purchase-history', [App\Http\Controllers\DashboardController::class, 'showPH'])->name('purchase-history');
 Route::get('/presets-and-wishlist', [App\Http\Controllers\DashboardController::class, 'showPW'])->name('presets-and-wishlist');
-// Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'showAdmin'])->name('admin');
 Route::get('/admin', [
     'uses' => 'App\Http\Controllers\DashboardController@showAdmin',
     'middleware' => 'roles',

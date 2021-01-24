@@ -2,13 +2,13 @@
 
 @section('title')
     <title>Ethereal - Community</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
+    <div id="notifDiv"></div>
+
     <div class="cmn-cont">
         <div class="cmn-cont_tables">
             <div class="cmn-cont_title">
@@ -55,10 +55,7 @@
                         @guest
                         <img class="icon-grey" src="{{ asset('img/favorite-icon.png')}}">
                         @else
-                        <!-- <form id="register">
-                            <button type="submit">getRequest</button>
-                        </form> -->
-                        <input data-id="{{$preset->fav}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $preset->status ? 'checked' : '' }}>
+                        <input type="checkbox" class="toggle-class" data-id="{{ $preset->id }}" data-toggle="toggle" data-style="slow" data-on="Favorite" data-off="UnFav" {{ $preset->status == true ? 'checked' : ''}}>
                         @endguest
                     </td>
                     <td class="cmn-tbl-pt">{{$preset->preset_title}}</td>
@@ -91,23 +88,37 @@
             </table>
         </div>
     </div>
+@endsection
 
-    <script type="text/javascript">
-    $(function() {
-        $('.toggle-class').change(function() {
-            var status = $(this).prop('checked') == true ? 1 : 0; 
-            var fav = $(this).data('fav'); 
-            
-            $.ajax({
-                type: "GET",
-                dataType: "json",
-                url: '/changeStatus',
-                data: {'status': status, 'fav': fav},
-                success: function(data){
-                console.log(data.success)
-                }
+@push('scripts')
+    <script>
+        $(function() {
+            $('#toggle-two').bootstrapToggle({
+            on: 'Enabled',
+            off: 'Disabled'
             });
         })
-    })
-    </script>
-@endsection
+
+        $('.toggle-class').on('change', function() {
+            var status = $(this).prop('checked') == true ? 1 : 0;
+            var id = $(this).data('id');
+            $.ajax({
+                type: 'GET',
+                dataType: 'JSON',
+                url: 'changeStatus',
+                data: {
+                    'status': status,
+                    'id': id
+                },
+                success:function(data) {
+                    $('#notifDiv').fadeIn();
+                    $('#notifDiv').css('background', 'green');
+                    $('#notifDiv').text('Status Updated Successfully');
+                    setTimeout(() => {
+                        $('#notifDiv').fadeOut();
+                    }, 3000);
+                }
+            });
+        });
+    </script>  
+@endpush

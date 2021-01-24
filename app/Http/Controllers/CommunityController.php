@@ -40,6 +40,14 @@ class CommunityController extends Controller
       return view('community', ['presets' => $presets], ['categories' => Category::all()]);
     }
 
+    public function changeStatus(Request $request) {
+
+      $presets = Presets::find($request->id);
+      $presets->status = $request->status;
+      $presets->save();
+      return response()->json(['success' => 'Status Changed Successfully']);
+    }
+
     public function create()
     {
       return view('presets.upload-preset', [
@@ -50,7 +58,6 @@ class CommunityController extends Controller
     public function store()
     {
       Presets::create(request()->validate([
-        'fav' => 'required',
         'user_id' =>  'required',
         'preset_title' => ['required', 'min:2', 'max:100'],
         'creator' => 'required',
