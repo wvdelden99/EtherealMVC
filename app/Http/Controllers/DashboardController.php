@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,8 @@ class DashboardController extends Controller
     }
     public function showAdmin()
     {
-        return view('auth.dashboard.admin');
+        $users = User::all();
+        return view('auth.dashboard.admin', ['users' => $users]);
     }
 
     public function showEdit()
@@ -72,5 +74,10 @@ class DashboardController extends Controller
        $user->update($attributes);
 
         return redirect('/edit-account');
+    }
+
+    public function showNP()
+    {
+        return view('no-permission');
     }
 }

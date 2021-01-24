@@ -2,13 +2,17 @@
 
 @section('title')
     <title>Ethereal - Community</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 @endsection
 
 @section('content')
     <div class="cmn-cont">
         <div class="cmn-cont_tables">
             <div class="cmn-cont_title">
-                <h2>Ascend</h2>
+                <h2>Upload</h2>
                 @guest
                 <a></a>
                 @else
@@ -51,9 +55,10 @@
                         @guest
                         <img class="icon-grey" src="{{ asset('img/favorite-icon.png')}}">
                         @else
-                        <form action="">
-                            <button rype="submit" class="favorite_btn"><img src="{{ asset('img/favorite-icon.png')}}"></button>
-                        </form>
+                        <!-- <form id="register">
+                            <button type="submit">getRequest</button>
+                        </form> -->
+                        <input data-id="{{$preset->fav}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $preset->status ? 'checked' : '' }}>
                         @endguest
                     </td>
                     <td class="cmn-tbl-pt">{{$preset->preset_title}}</td>
@@ -86,4 +91,23 @@
             </table>
         </div>
     </div>
+
+    <script type="text/javascript">
+    $(function() {
+        $('.toggle-class').change(function() {
+            var status = $(this).prop('checked') == true ? 1 : 0; 
+            var fav = $(this).data('fav'); 
+            
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: '/changeStatus',
+                data: {'status': status, 'fav': fav},
+                success: function(data){
+                console.log(data.success)
+                }
+            });
+        })
+    })
+    </script>
 @endsection

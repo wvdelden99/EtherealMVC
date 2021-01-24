@@ -812,3 +812,34 @@
 .error_input, .error_select {
     border: 1px solid #c80000 !important;
 }
+
+/*-----No Permission-----*/
+.np-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 25vw;
+    height: 50vh;
+}
+
+.np-cont h2 {
+    padding-bottom: 3vh;
+    color: #f0f0f0;
+    font-size: 2em;
+}
+
+.np-cont p {
+    padding: 2vh 0;
+    color: #f0f0f0;
+    font-size: 0.9em;
+    font-weight: lighter;
+}
+
+.np-cont a {
+    color: #757575;
+    transition: 0.2s;
+}
+
+.np-cont a:hover {
+    color: #414141;
+}

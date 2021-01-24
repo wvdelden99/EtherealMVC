@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wish;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PluginsController extends Controller
 {
     public function show()
     {
-      return view ('plugins');  
+      return view ('plugins');
     }
 
     //Plugins
@@ -27,9 +28,25 @@ class PluginsController extends Controller
     }
     public function showReflection()
     {
-      return view ('plugins.reflection');
+      $users = User::all();
+      return view ('plugins.reflection', ['users' => $users]);
     }
 
+    public function store(Request $request)
+    {
+        $user = User::where('email', $request['email'])->first();
+        $user->roles()->detach();
+        if ($request['role_user']) {
+            $user->roles()->attach(Role::where('name', 'User')->first());
+        }
+        if ($request['role_buyer']) {
+            $user->roles()->attach(Role::where('name', 'Buyer')->first());
+        }
+        if ($request['role_admin']) {
+            $user->roles()->attach(Role::where('name', 'Admin')->first());
+        }
+        return redirect()->back();
+    }
 
     public function showSky()
     {

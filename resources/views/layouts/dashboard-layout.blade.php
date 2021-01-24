@@ -24,11 +24,11 @@
                 <a class="dashboard_link" href="{{ route('presets-and-wishlist')}}">
                     <div class="dashboard_link-item">Presets & Wishlist</div>
                 </a>
-                @can('edit')
+                @if(Auth::user()->hasRole('Admin'))
                     <a class="dashboard_link" href="{{ route('admin')}}">
                         <div class="dashboard_link-item">Admin Tab</div>
                     </a>
-                @endcan
+                @endif
             </div>
 
             @yield('dashboard-content')

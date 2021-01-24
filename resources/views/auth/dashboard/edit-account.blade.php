@@ -21,11 +21,13 @@
                         <button class="edit_btn" type="button" >Edit</button>
                     </div>
                     <div class="dashboard-edit">
-                        <input type="text" name="name" id="name" placeholder="{{ Auth::user()->name }}">
-                        <div class="dashboard-btn">
-                            <button class="submit-btn" type="submit">Save Changes</button>
-                            <button class="alt-btn" type="button">Cancel</button>
-                        </div>
+                        <form>
+                            <input type="text" name="name" id="name" placeholder="{{ Auth::user()->name }}">
+                            <div class="dashboard-btn">
+                                <button class="submit-btn" type="submit">Save Changes</button>
+                                <button class="alt-btn" type="button">Cancel</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

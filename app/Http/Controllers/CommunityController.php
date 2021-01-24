@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Presets;
 use App\Models\Category;
+use App\Models\Presets;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
 {
+    /**
+     * Responds with a welcome message with instructions
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
       $s = $request->input('s');
@@ -30,8 +36,7 @@ class CommunityController extends Controller
       }
       elseif($request['sort'] == "category"){
         $presets = Presets::take(5)->orderBy('category')->get();
-    }
-
+      }
       return view('community', ['presets' => $presets], ['categories' => Category::all()]);
     }
 
@@ -45,6 +50,7 @@ class CommunityController extends Controller
     public function store()
     {
       Presets::create(request()->validate([
+        'fav' => 'required',
         'user_id' =>  'required',
         'preset_title' => ['required', 'min:2', 'max:100'],
         'creator' => 'required',

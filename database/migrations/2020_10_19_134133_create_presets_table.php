@@ -15,6 +15,7 @@ class CreatePresetsTable extends Migration
     {
         Schema::create('presets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->boolean('fav')->default(0);
             $table->unsignedBigInteger('user_id'); 
             $table->string('preset_title');
             $table->string('creator');

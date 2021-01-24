@@ -7,8 +7,10 @@
 @section('content')
     <div class="cmnup-cont">
         <div class="cmnup-cont_form">
+
         <form method="POST" action="{{ route('community')}}">
             @csrf
+                <input type="hidden" name="fav" id="fav" value="0">
                 <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id}}">
             <label for="preset_title">Preset Title</label>
                 <input class="@error('preset_title') error_input @enderror" type="text"  name="preset_title" id="preset_title" value="{{ old('preset_title')}}" autofocus requireds>

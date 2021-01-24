@@ -21,14 +21,14 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        $this->registerPolicies();
+    // public function boot()
+    // {
+    //     $this->registerPolicies();
 
-        Gate::before(function ($user, $ability) {
-            if ($user->abilities()->contains($ability)) {
-                return true;   
-            }
-        });
-    }
+    //     Gate::before(function ($user, $ability) {
+    //         if ($user->abilities()->contains($ability)) {
+    //             return true;   
+    //         }
+    //     });
+    // }
 }

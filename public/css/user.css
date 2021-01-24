@@ -303,3 +303,64 @@
     border: 1px solid #757575;
     color: #757575;
 }
+
+/*-----Admin-----*/
+.admin-tbl {
+    width: 100%;
+}
+
+.admin-tbl tr {
+    display: flex;
+    padding: 2vh 1vw;
+}
+
+.admin-tbl td, .admin-tbl th {
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+
+.adm-td1 {
+    flex: 2;
+}
+
+.adm-td2 {
+    flex: 3;
+}
+
+.adm-td3 {
+    flex: 1;
+}
+
+.adm-td4 {
+    margin-top: -1vh;
+}
+
+.adm-tl1 {
+    flex: 0;
+}
+
+.adm-tl2 {
+    flex: 46;
+}
+
+.adm-tl3 {
+    flex: 10;
+}
+
+.adm-tl4 {
+    flex: 21;
+}
+
+.admin-tbl button {
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 1vh 1vw;
+    color: #f0f0f0;
+    background-color: #151515;
+    transition: 0.2s;
+}
+
+.admin-tbl button:hover {
+    border: 1px solid #757575;
+    color: #757575;
+}
