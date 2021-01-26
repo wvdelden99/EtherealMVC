@@ -19,6 +19,7 @@ class CreatePresetsTable extends Migration
             $table->string('preset_title');
             $table->string('creator');
             $table->string('category');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
 
             $table->foreign('user_id')

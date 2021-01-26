@@ -78,9 +78,9 @@
             </div>
             <div class="plg-cont-mid3-option">
                 <div class="plg-cont-mid3-box">
-                        <form method="POST" action="{{ route('reflection')}}" class="plg-cont-mid3_img">
-                            <button type="submit"><img src="{{ asset('img/like-icon.png')}}"></button>
-                        </form>
+                        <div class="plg-cont-mid3_img">
+                            <!-- <img src="{{ asset('img/like-icon.png')}}"> -->
+                        </div>
                     <div class="plg-cont-mid3-box-cont pcmbh">
                         <div class="plg-cont-mid3-top">
                             <img src="{{asset('img/reflection-icon-000.png')}}">
@@ -89,7 +89,20 @@
                         <h1 class="plg-cont-mid3-price pcmp"><span>$</span>75</h1>
                         <div class="plg-cont-mid3_btn pcmb">
                             <button class="plg-cont-mid3_btn-tff">Try for Free*</button>
-                            <button class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                            @guest
+                                <button type="button" class="plg-cont-mid3_btn-atc" onclick="window.location='{{ route('login') }}'">Add to Cart</button> 
+                            @else
+                                @if(Auth::user()->hasRole('Buyer') && ('User'))
+                                    <button type="button" class="plg-cont-mid3_btn-atc" onclick="window.location='{{ route('purchase-history') }}'">BOUGHT</button>
+                                @elseif(Auth::user()->hasRole('User'))
+                                    <form action="{{ route('reflection') }}" method="post">
+                                        <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+                                        <input style="display:none" type="checkbox" id="myCheck" {{ Auth::user()->hasRole('Buyer') ? 'checked' : '' }} name="role_buyer">
+                                        {{ csrf_field() }}
+                                        <button type="submit" onclick="check()" class="plg-cont-mid3_btn-atc">Add to Cart</button>
+                                    </form>
+                                @endif
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -134,4 +147,13 @@
         <p>Ableton Live 10, FL Studio 20, Komplete Kontrol, MASCHINE 2, REAPER 5</p>
     </div>
     
+    <script>
+        function check() {
+        document.getElementById("myCheck").checked = true;
+        }
+
+        function uncheck() {
+        document.getElementById("myCheck").checked = false;
+        }
+    </script>
 @endsection

@@ -303,3 +303,70 @@
     border: 1px solid #757575;
     color: #757575;
 }
+
+/*-----Admin-----*/
+.admin-tbl {
+    width: 100%;
+}
+
+.admin-tbl tr {
+    display: flex;
+    padding: 2vh 1vw;
+}
+
+.admin-tbl td, .admin-tbl th {
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+
+.tbl-flx0 {
+    flex: 0;
+}
+.tbl-flx5 {
+    flex: 5;
+}
+.tbl-flx10 {
+    flex: 10;
+}
+.tbl-flx15 {
+    flex: 15;
+
+}
+.tbl-flx20 {
+    flex: 20;
+}
+.tbl-flx25 {
+    flex: 25;
+}
+.tbl-flx30 {
+    flex: 30;
+}
+.tbl-flx40 {
+    flex: 40;
+}
+
+.admin-tbl button {
+    margin-top: -1vh;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 1vh 1vw;
+    color: #f0f0f0;
+    background-color: #151515;
+    transition: 0.2s;
+}
+
+.admin-tbl button:hover {
+    border: 1px solid #757575;
+    color: #757575;
+}
+
+.admin-tbl img {
+    margin-top: -0.5vh;
+    margin-left: 1vw;
+    width: 24px;
+    transition: 0.2s;
+}
+
+.admin-tbl img:hover {
+    opacity: 0.4;
+}

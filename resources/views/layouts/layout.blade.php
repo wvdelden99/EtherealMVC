@@ -81,9 +81,9 @@
                     <a href="{{ route('edit-account')}}">Edit Account</a>
                     <a href="{{ route('purchase-history')}}">Purchase History</a>
                     <a href="{{ route('presets-and-wishlist')}}">Presets & Wishlist</a>
-                    @can('edit')
+                    @if(Auth::user()->hasRole('Admin'))
                     <a href="{{ route('admin')}}">Admin Tab</a>
-                    @endcan
+                    @endif
                 </div>
                 <div class="dropdown-signout">
                     <a class="nav-ddc_link" href="{{ route('logout') }}"
@@ -150,5 +150,14 @@
         </footer>
 
         <script src="{{asset('js/main.js')}}"></script>
+        <script
+            src="http://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        @stack('scripts')
     </body>
 </html>

@@ -7,6 +7,7 @@
 @section('content')
     <div class="cmnup-cont">
         <div class="cmnup-cont_form">
+
         <form method="POST" action="{{ route('community')}}">
             @csrf
                 <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id}}">

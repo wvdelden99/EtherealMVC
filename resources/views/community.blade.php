@@ -2,13 +2,17 @@
 
 @section('title')
     <title>Ethereal - Community</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
+    <div id="notifDiv"></div>
+
     <div class="cmn-cont">
         <div class="cmn-cont_tables">
             <div class="cmn-cont_title">
-                <h2>Ascend</h2>
+                <h2>Upload</h2>
                 @guest
                 <a></a>
                 @else
@@ -51,9 +55,7 @@
                         @guest
                         <img class="icon-grey" src="{{ asset('img/favorite-icon.png')}}">
                         @else
-                        <form action="">
-                            <button rype="submit" class="favorite_btn"><img src="{{ asset('img/favorite-icon.png')}}"></button>
-                        </form>
+                        <input type="checkbox" class="toggle-class" data-id="{{ $preset->id }}" data-toggle="toggle" data-style="slow" data-on="Favorite" data-off="UnFav" {{ $preset->status == true ? 'checked' : ''}}>
                         @endguest
                     </td>
                     <td class="cmn-tbl-pt">{{$preset->preset_title}}</td>
@@ -87,3 +89,36 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('#toggle-two').bootstrapToggle({
+            on: 'Enabled',
+            off: 'Disabled'
+            });
+        })
+
+        $('.toggle-class').on('change', function() {
+            var status = $(this).prop('checked') == true ? 1 : 0;
+            var id = $(this).data('id');
+            $.ajax({
+                type: 'GET',
+                dataType: 'JSON',
+                url: 'changeStatus',
+                data: {
+                    'status': status,
+                    'id': id
+                },
+                success:function(data) {
+                    $('#notifDiv').fadeIn();
+                    $('#notifDiv').css('background', 'green');
+                    $('#notifDiv').text('Status Updated Successfully');
+                    setTimeout(() => {
+                        $('#notifDiv').fadeOut();
+                    }, 3000);
+                }
+            });
+        });
+    </script>  
+@endpush

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Presets extends Model
 {
-    protected $fillable = ['user_id', 'preset_title', 'creator', 'category'];
+    protected $fillable = ['fav', 'user_id', 'preset_title', 'creator', 'category'];
 
     // use HasFactory;
     public function scopeSearch($query, $s)

@@ -1,7 +1,7 @@
 /*-----Nav Icon Onclick-----*/
-// document.querySelector('.nav-list_icon-item').addEventListener('click', function () {
-//   document.querySelector('.dropdown').classList.toggle('dropdown-show')
-// });
+document.querySelector('.nav-list_icon-item').addEventListener('click', function () {
+  document.querySelector('.dropdown').classList.toggle('dropdown-show')
+});
 
 /*-----Nav Menu/Sidenav-----*/
 const menuBtn = document.querySelector('.nav-menu');
