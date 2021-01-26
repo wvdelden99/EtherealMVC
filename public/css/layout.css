@@ -13,7 +13,7 @@ body {
 }
 
 body, button, select, input {
-    font-family: Comfortaa;
+    font-family: Quicksand;
 }
 
 li {
@@ -42,7 +42,7 @@ button {
 }
 
 /*-----Navbar-----*/
-.nav {
+nav {
     --nav_txt: #f0f0f0;
     --nav_txt-hover: #757575;
     --nav_img: invert(0%);
@@ -169,7 +169,7 @@ button {
 }
 
 @media screen and (min-width: 240px) and (max-width: 960px){
-    .nav {
+    nav {
         min-height: 8vh;
     }
     .nav-logo {
