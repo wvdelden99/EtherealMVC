@@ -87,8 +87,7 @@
                 </div>
                 <div class="dropdown-signout">
                     <a class="nav-ddc_link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Sign Out<img src="{{ asset('img/icon/sign-out-icon-f0f0f0.png')}}"></a>
+                                       >Sign Out<img src="{{ asset('img/icon/sign-out-icon-f0f0f0.png')}}"></a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                          @csrf

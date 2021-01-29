@@ -258,8 +258,8 @@ nav {
 .dropdown {
     position: fixed;
     display: none;
-    top: 6vh;
-    right: 2.5vw;
+    top: 7vh;
+    right: 3.25vw;
     z-index: 20;
 }
 

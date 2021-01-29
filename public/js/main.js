@@ -1,7 +1,17 @@
-/*-----Nav Icon Onclick-----*/
-document.querySelector('.nav-list_icon-item').addEventListener('click', function () {
+/*-----Nav Icon Onclick / Dropdown-----*/
+document.querySelector('.nav-list_icon-item').addEventListener("click", dropDown);
+
+function dropDown() {
   document.querySelector('.dropdown').classList.toggle('dropdown-show')
-});
+}
+
+/*-----Dropdown Logout-----*/
+document.querySelector('.nav-ddc_link').addEventListener("click", submitLogout);
+
+function submitLogout() {
+  event.preventDefault();
+  document.getElementById('logout-form').submit();
+}
 
 /*-----Nav Menu/Sidenav-----*/
 const menuBtn = document.querySelector('.nav-menu');
